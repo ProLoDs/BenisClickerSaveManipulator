@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Benis Manipulator</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        .wrap { display: flex; flex-direction: column; height: 100vh; }
+        textarea {
+            flex: 0 0 80%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1rem;
+            font-size: 1rem;
+            resize: none;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .bottom {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            background: #f8f8f8;
+        }
+        button {
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <textarea id="mainText" placeholder="Type here...">
+{
+    "benis": 1234567,
+    "totalBenis": 1234567,
+    "totalClicks": 1234567,
+    "benisPerClick": 1,
+    "benisPerSecond": 0,
+    "upgrades": [
+        {
+            "id": "click_1",
+            "type": "clicker",
+            "name": "Erster Hochlad",
+            "description": "Aller Anfang ist schwer.",
+            "baseCost": 15,
+            "costMultiplier": 1.5,
+            "bpsBonus": 0,
+            "clickBonus": 1,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_2",
+            "type": "clicker",
+            "name": "Original Content",
+            "description": "Endlich eigener Content.",
+            "baseCost": 100,
+            "costMultiplier": 1.5,
+            "bpsBonus": 0,
+            "clickBonus": 3,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_3",
+            "type": "clicker",
+            "name": "Raid Hochlad",
+            "description": "Perfekt getimed.",
+            "baseCost": 500,
+            "costMultiplier": 1.6,
+            "bpsBonus": 0,
+            "clickBonus": 8,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_4",
+            "type": "clicker",
+            "name": "Haustier OC",
+            "description": "Katzen gehen immer.",
+            "baseCost": 2000,
+            "costMultiplier": 1.6,
+            "bpsBonus": 0,
+            "clickBonus": 20,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_5",
+            "type": "clicker",
+            "name": "Wichtel OC",
+            "description": "Nur zu Weihnachten.",
+            "baseCost": 7500,
+            "costMultiplier": 1.7,
+            "bpsBonus": 0,
+            "clickBonus": 50,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_6",
+            "type": "clicker",
+            "name": "Shitpost",
+            "description": "Low effort, high benis.",
+            "baseCost": 25000,
+            "costMultiplier": 1.7,
+            "bpsBonus": 0,
+            "clickBonus": 120,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_7",
+            "type": "clicker",
+            "name": "Wörk OC",
+            "description": "Hochladen während der Arbeit.",
+            "baseCost": 80000,
+            "costMultiplier": 1.8,
+            "bpsBonus": 0,
+            "clickBonus": 300,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_8",
+            "type": "clicker",
+            "name": "NSFL Hochlad",
+            "description": "Nichts für schwache Nerven.",
+            "baseCost": 250000,
+            "costMultiplier": 1.8,
+            "bpsBonus": 0,
+            "clickBonus": 800,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_9",
+            "type": "clicker",
+            "name": "Qualitäts-Hochlad",
+            "description": "Echte Handarbeit.",
+            "baseCost": 1000000,
+            "costMultiplier": 1.9,
+            "bpsBonus": 0,
+            "clickBonus": 2500,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_10",
+            "type": "clicker",
+            "name": "Qualitäts-Shitpost",
+            "description": "Die höchste Kunst.",
+            "baseCost": 5000000,
+            "costMultiplier": 2,
+            "bpsBonus": 0,
+            "clickBonus": 10000,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_11",
+            "type": "clicker",
+            "name": "NSFW OC",
+            "description": "Selbstgemacht schmeckt am besten.",
+            "baseCost": 25000000,
+            "costMultiplier": 2.2,
+            "bpsBonus": 0,
+            "clickBonus": 40000,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "click_12",
+            "type": "clicker",
+            "name": "Angepinnter Hochlad",
+            "description": "Von den Mods gesegnet.",
+            "baseCost": 100000000,
+            "costMultiplier": 2.5,
+            "bpsBonus": 0,
+            "clickBonus": 150000,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_1",
+            "type": "passive",
+            "name": "Repost-Suche",
+            "description": "Vor Hochladen nach Repost suchen.",
+            "baseCost": 25,
+            "costMultiplier": 1.3,
+            "bpsBonus": 0.5,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_2",
+            "type": "passive",
+            "name": "Richtiges Grau",
+            "description": "Verwende den einzig wahren Hintergrund.",
+            "baseCost": 120,
+            "costMultiplier": 1.35,
+            "bpsBonus": 2,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_3",
+            "type": "passive",
+            "name": "Kommentar vorbereiten",
+            "description": "Schlagfertig sein lohnt sich.",
+            "baseCost": 500,
+            "costMultiplier": 1.4,
+            "bpsBonus": 8,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_4",
+            "type": "passive",
+            "name": "Hochlad vorausplanen",
+            "description": "Timing ist alles.",
+            "baseCost": 2000,
+            "costMultiplier": 1.45,
+            "bpsBonus": 25,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_5",
+            "type": "passive",
+            "name": "Filter-Tags",
+            "description": "Tags richtig setzen.",
+            "baseCost": 7500,
+            "costMultiplier": 1.5,
+            "bpsBonus": 80,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_6",
+            "type": "passive",
+            "name": "Ordentlich Taggen",
+            "description": "Damit man es auch findet.",
+            "baseCost": 25000,
+            "costMultiplier": 1.55,
+            "bpsBonus": 200,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_7",
+            "type": "passive",
+            "name": "Link zur Soße",
+            "description": "Ehrenmann.",
+            "baseCost": 80000,
+            "costMultiplier": 1.6,
+            "bpsBonus": 500,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_8",
+            "type": "passive",
+            "name": "Schwarze Balken weg",
+            "description": "Crop deine Uploads.",
+            "baseCost": 250000,
+            "costMultiplier": 1.65,
+            "bpsBonus": 1500,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_9",
+            "type": "passive",
+            "name": "Musik optimieren",
+            "description": "Unnötige Musik entfernen.",
+            "baseCost": 800000,
+            "costMultiplier": 1.7,
+            "bpsBonus": 3500,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_10",
+            "type": "passive",
+            "name": "Benisfarm-Musik",
+            "description": "Musik hinzufügen die ballert.",
+            "baseCost": 2500000,
+            "costMultiplier": 1.75,
+            "bpsBonus": 8000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_11",
+            "type": "passive",
+            "name": "Nachtaggen",
+            "description": "Fremde Hochlads nachtaggen.",
+            "baseCost": 7500000,
+            "costMultiplier": 1.8,
+            "bpsBonus": 20000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_12",
+            "type": "passive",
+            "name": "Repost Markierer",
+            "description": "Gnadenlos reposts markieren.",
+            "baseCost": 20000000,
+            "costMultiplier": 1.85,
+            "bpsBonus": 50000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_13",
+            "type": "passive",
+            "name": "Nutzer-Bot",
+            "description": "Ein Skript für die Drecksarbeit.",
+            "baseCost": 50000000,
+            "costMultiplier": 1.9,
+            "bpsBonus": 120000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_14",
+            "type": "passive",
+            "name": "Legenden-Farm",
+            "description": "Benis farmen mit Legenden.",
+            "baseCost": 150000000,
+            "costMultiplier": 2,
+            "bpsBonus": 350000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_15",
+            "type": "passive",
+            "name": "Nostalgie-Farm",
+            "description": "Früher war alles besser.",
+            "baseCost": 400000000,
+            "costMultiplier": 2.1,
+            "bpsBonus": 800000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_16",
+            "type": "passive",
+            "name": "Beliebt-Garantie",
+            "description": "Jeder Hochlad auf beliebt.",
+            "baseCost": 1000000000,
+            "costMultiplier": 2.2,
+            "bpsBonus": 2000000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_17",
+            "type": "passive",
+            "name": "Gamb Kommentar",
+            "description": "Gamb kommentiert unter deinem Hochlad.",
+            "baseCost": 2500000000,
+            "costMultiplier": 2.3,
+            "bpsBonus": 5000000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_18",
+            "type": "passive",
+            "name": "pr0texter",
+            "description": "Automatische Texte.",
+            "baseCost": 7500000000,
+            "costMultiplier": 2.4,
+            "bpsBonus": 12000000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_19",
+            "type": "passive",
+            "name": "pr0verter",
+            "description": "High-End Konvertierung.",
+            "baseCost": 20000000000,
+            "costMultiplier": 2.5,
+            "bpsBonus": 30000000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        },
+        {
+            "id": "passive_20",
+            "type": "passive",
+            "name": "Japan-Content",
+            "description": "Videos und Bilder aus Japan.",
+            "baseCost": 50000000000,
+            "costMultiplier": 2.6,
+            "bpsBonus": 100000000,
+            "clickBonus": 0,
+            "owned": 0,
+            "isFavorite": false,
+            "votes": 0
+        }
+    ],
+    "achievements": [
+        {
+            "id": "click-100",
+            "name": "Fingerwärmer",
+            "description": "Klicke 100 mal",
+            "requirement": 100,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "click-500",
+            "name": "Klick-Starter",
+            "description": "Klicke 500 mal",
+            "requirement": 500,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "click-1k",
+            "name": "Tausender",
+            "description": "Klicke 1.000 mal",
+            "requirement": 1000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.2
+        },
+        {
+            "id": "click-5k",
+            "name": "Dauerfeuer",
+            "description": "Klicke 5.000 mal",
+            "requirement": 5000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.2
+        },
+        {
+            "id": "click-10k",
+            "name": "Klick-Profi",
+            "description": "Klicke 10.000 mal",
+            "requirement": 10000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.3
+        },
+        {
+            "id": "click-25k",
+            "name": "Maus-Killer",
+            "description": "Klicke 25.000 mal",
+            "requirement": 25000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.3
+        },
+        {
+            "id": "click-50k",
+            "name": "Karpaltunnel",
+            "description": "Klicke 50.000 mal",
+            "requirement": 50000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.4
+        },
+        {
+            "id": "click-100k",
+            "name": "Hunderttausend!",
+            "description": "Klicke 100.000 mal",
+            "requirement": 100000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.5,
+            "icon": "/src/assets/stonks-diamond-paws.png"
+        },
+        {
+            "id": "click-250k",
+            "name": "Viertelmillion",
+            "description": "Klicke 250.000 mal",
+            "requirement": 250000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.6
+        },
+        {
+            "id": "click-500k",
+            "name": "Halbe Million",
+            "description": "Klicke 500.000 mal",
+            "requirement": 500000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 0.8
+        },
+        {
+            "id": "click-1m",
+            "name": "Klick-Millionär",
+            "description": "Klicke 1.000.000 mal",
+            "requirement": 1000000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 1
+        },
+        {
+            "id": "click-5m",
+            "name": "Klick-Gott",
+            "description": "Klicke 5.000.000 mal",
+            "requirement": 5000000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 1.2
+        },
+        {
+            "id": "click-10m",
+            "name": "Finger aus Stahl",
+            "description": "Klicke 10.000.000 mal",
+            "requirement": 10000000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 1.5
+        },
+        {
+            "id": "click-50m",
+            "name": "Klick-Universum",
+            "description": "Klicke 50.000.000 mal",
+            "requirement": 50000000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 2
+        },
+        {
+            "id": "click-100m",
+            "name": "Der Auserwählte",
+            "description": "Klicke 100.000.000 mal",
+            "requirement": 100000000,
+            "type": "clicks",
+            "unlocked": false,
+            "pr0miumBoost": 2.5
+        },
+        {
+            "id": "benis-500",
+            "name": "Erste Schritte",
+            "description": "Sammle 500 Benis",
+            "requirement": 500,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "benis-1k",
+            "name": "Sparschwein",
+            "description": "Sammle 1.000 Benis",
+            "requirement": 1000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "benis-5k",
+            "name": "Taschengeld",
+            "description": "Sammle 5.000 Benis",
+            "requirement": 5000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "benis-10k",
+            "name": "Bausparvertrag",
+            "description": "Sammle 10.000 Benis",
+            "requirement": 10000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.2
+        },
+        {
+            "id": "benis-50k",
+            "name": "Mittelstand",
+            "description": "Sammle 50.000 Benis",
+            "requirement": 50000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.2
+        },
+        {
+            "id": "benis-100k",
+            "name": "Großverdiener",
+            "description": "Sammle 100.000 Benis",
+            "requirement": 100000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.3
+        },
+        {
+            "id": "benis-500k",
+            "name": "Neureich",
+            "description": "Sammle 500.000 Benis",
+            "requirement": 500000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.4
+        },
+        {
+            "id": "benis-1m",
+            "name": "Benis-Millionär",
+            "description": "Sammle 1.000.000 Benis",
+            "requirement": 1000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.5,
+            "icon": "/src/assets/pr0-coin.png"
+        },
+        {
+            "id": "benis-5m",
+            "name": "Multi-Millionär",
+            "description": "Sammle 5.000.000 Benis",
+            "requirement": 5000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.6
+        },
+        {
+            "id": "benis-10m",
+            "name": "Investmentbanker",
+            "description": "Sammle 10.000.000 Benis",
+            "requirement": 10000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 0.8
+        },
+        {
+            "id": "benis-50m",
+            "name": "Großkapitalist",
+            "description": "Sammle 50.000.000 Benis",
+            "requirement": 50000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 1
+        },
+        {
+            "id": "benis-100m",
+            "name": "Benis-Magnat",
+            "description": "Sammle 100.000.000 Benis",
+            "requirement": 100000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 1.2
+        },
+        {
+            "id": "benis-500m",
+            "name": "Oligarch",
+            "description": "Sammle 500.000.000 Benis",
+            "requirement": 500000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 1.5
+        },
+        {
+            "id": "benis-1b",
+            "name": "Benis-Milliardär",
+            "description": "Sammle 1.000.000.000 Benis",
+            "requirement": 1000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 2
+        },
+        {
+            "id": "benis-10b",
+            "name": "Weltherrschaft",
+            "description": "Sammle 10 Milliarden Benis",
+            "requirement": 10000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 2.5
+        },
+        {
+            "id": "benis-100b",
+            "name": "Benis-Imperium",
+            "description": "Sammle 100 Milliarden Benis",
+            "requirement": 100000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 3
+        },
+        {
+            "id": "benis-1t",
+            "name": "Benis-Billionär",
+            "description": "Sammle 1 Billion Benis",
+            "requirement": 1000000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 4
+        },
+        {
+            "id": "benis-10t",
+            "name": "Galaktisch",
+            "description": "Sammle 10 Billionen Benis",
+            "requirement": 10000000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 5
+        },
+        {
+            "id": "benis-100t",
+            "name": "Multiversum",
+            "description": "Sammle 100 Billionen Benis",
+            "requirement": 100000000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 6
+        },
+        {
+            "id": "benis-1q",
+            "name": "Simulation geknackt",
+            "description": "Sammle 1 Billiarde Benis",
+            "requirement": 1000000000000000,
+            "type": "benis",
+            "unlocked": false,
+            "pr0miumBoost": 10
+        },
+        {
+            "id": "combo-10",
+            "name": "Raid-Starter",
+            "description": "Erreiche eine 10er Raid",
+            "requirement": 10,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "combo-25",
+            "name": "Heißer Finger",
+            "description": "Erreiche eine 25er Raid",
+            "requirement": 25,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 0.2
+        },
+        {
+            "id": "combo-50",
+            "name": "Raid-König",
+            "description": "Erreiche eine 50er Raid",
+            "requirement": 50,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 0.3
+        },
+        {
+            "id": "combo-75",
+            "name": "Unaufhaltsam",
+            "description": "Erreiche eine 75er Raid",
+            "requirement": 75,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 0.4
+        },
+        {
+            "id": "combo-100",
+            "name": "Raid-Legende",
+            "description": "Erreiche eine 100er Raid",
+            "requirement": 100,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 0.5,
+            "icon": "/src/assets/stonks-gain.png"
+        },
+        {
+            "id": "combo-150",
+            "name": "Maus-Meister",
+            "description": "Erreiche eine 150er Raid",
+            "requirement": 150,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 0.7
+        },
+        {
+            "id": "combo-200",
+            "name": "Übermenschlich",
+            "description": "Erreiche eine 200er Raid",
+            "requirement": 200,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 1
+        },
+        {
+            "id": "combo-300",
+            "name": "Matrix",
+            "description": "Erreiche eine 300er Raid",
+            "requirement": 300,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 1.5
+        },
+        {
+            "id": "combo-500",
+            "name": "Godmode",
+            "description": "Erreiche eine 500er Raid",
+            "requirement": 500,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 2
+        },
+        {
+            "id": "combo-750",
+            "name": "Zeitlupe",
+            "description": "Erreiche eine 750er Raid",
+            "requirement": 750,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 3
+        },
+        {
+            "id": "combo-1000",
+            "name": "Lichtgeschwindigkeit",
+            "description": "Erreiche eine 1000er Raid",
+            "requirement": 1000,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 4
+        },
+        {
+            "id": "combo-2000",
+            "name": "Singularität",
+            "description": "Erreiche eine 2000er Raid",
+            "requirement": 2000,
+            "type": "raid",
+            "unlocked": false,
+            "pr0miumBoost": 5
+        },
+        {
+            "id": "upgrades-5",
+            "name": "Erstausstattung",
+            "description": "Kaufe 5 Upgrades",
+            "requirement": 5,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "upgrades-10",
+            "name": "Upgrade-Sammler",
+            "description": "Kaufe 10 Upgrades",
+            "requirement": 10,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.1
+        },
+        {
+            "id": "upgrades-25",
+            "name": "Konsumopfer",
+            "description": "Kaufe 25 Upgrades",
+            "requirement": 25,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.2
+        },
+        {
+            "id": "upgrades-50",
+            "name": "Upgrade-Junkie",
+            "description": "Kaufe 50 Upgrades",
+            "requirement": 50,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.3
+        },
+        {
+            "id": "upgrades-75",
+            "name": "Massenkauf",
+            "description": "Kaufe 75 Upgrades",
+            "requirement": 75,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.4
+        },
+        {
+            "id": "upgrades-100",
+            "name": "Hundert!",
+            "description": "Kaufe 100 Upgrades",
+            "requirement": 100,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.5
+        },
+        {
+            "id": "upgrades-150",
+            "name": "Technokrat",
+            "description": "Kaufe 150 Upgrades",
+            "requirement": 150,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 0.7
+        },
+        {
+            "id": "upgrades-200",
+            "name": "Upgrade-Gott",
+            "description": "Kaufe 200 Upgrades",
+            "requirement": 200,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 1
+        },
+        {
+            "id": "upgrades-300",
+            "name": "Singularität",
+            "description": "Kaufe 300 Upgrades",
+            "requirement": 300,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 1.5
+        },
+        {
+            "id": "upgrades-400",
+            "name": "Vierhundert",
+            "description": "Kaufe 400 Upgrades",
+            "requirement": 400,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 2
+        },
+        {
+            "id": "upgrades-500",
+            "name": "Wahnsinn",
+            "description": "Kaufe 500 Upgrades",
+            "requirement": 500,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 2.5
+        },
+        {
+            "id": "upgrades-750",
+            "name": "Alles gekauft",
+            "description": "Kaufe 750 Upgrades",
+            "requirement": 750,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 3.5
+        },
+        {
+            "id": "upgrades-1000",
+            "name": "Shopping-Legende",
+            "description": "Kaufe 1000 Upgrades",
+            "requirement": 1000,
+            "type": "upgrades",
+            "unlocked": false,
+            "pr0miumBoost": 5
+        },
+        {
+            "id": "sacrifice-1",
+            "name": "Erstes Opfer",
+            "description": "Opfere ein Upgrade",
+            "requirement": 1,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 0.5,
+            "icon": "/src/assets/contract.png"
+        },
+        {
+            "id": "sacrifice-5",
+            "name": "Ritual-Anfänger",
+            "description": "Opfere 5 Upgrades",
+            "requirement": 5,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 0.8
+        },
+        {
+            "id": "sacrifice-10",
+            "name": "Opfer-Enthusiast",
+            "description": "Opfere 10 Upgrades",
+            "requirement": 10,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 1
+        },
+        {
+            "id": "sacrifice-25",
+            "name": "Ritual-Meister",
+            "description": "Opfere 25 Upgrades",
+            "requirement": 25,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 1.5
+        },
+        {
+            "id": "sacrifice-50",
+            "name": "High Priest",
+            "description": "Opfere 50 Upgrades",
+            "requirement": 50,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 2
+        },
+        {
+            "id": "sacrifice-75",
+            "name": "Dunkler Lord",
+            "description": "Opfere 75 Upgrades",
+            "requirement": 75,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 3
+        },
+        {
+            "id": "sacrifice-100",
+            "name": "Kult-Anführer",
+            "description": "Opfere 100 Upgrades",
+            "requirement": 100,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 4
+        },
+        {
+            "id": "sacrifice-200",
+            "name": "Apokalypse",
+            "description": "Opfere 200 Upgrades",
+            "requirement": 200,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 5
+        },
+        {
+            "id": "sacrifice-500",
+            "name": "Weltuntergang",
+            "description": "Opfere 500 Upgrades",
+            "requirement": 500,
+            "type": "sacrifice",
+            "unlocked": false,
+            "pr0miumBoost": 10
+        }
+    ],
+    "currentRank": {
+        "id": "banned",
+        "name": "Gebannt",
+        "minBenis": 0,
+        "color": "rank-banned",
+        "bonusMultiplier": 1
+    },
+    "hasPr0mium": false,
+    "pr0miumMonths": 0,
+    "pr0miumBoost": 0,
+    "pr0miumBaseBoost": 2,
+    "raidCount": 0,
+    "raidClicks": 0,
+    "raidGraceUsed": false,
+    "raidMultiplier": 1,
+    "raidName": "",
+    "lastClickTime": 1766758767999,
+    "maxRaid": 0,
+    "totalSacrificed": 0,
+    "sacrificeBoost": 0,
+    "prestigeLevel": 0,
+    "unlockedPerks": [],
+    "activeEvent": null,
+    "items": [
+        {
+            "id": "item_chinesium",
+            "name": "Chinesium",
+            "description": "+50% Benis pro Klick & pro Sekunde für 5 Minuten.",
+            "cost": 100000000,
+            "duration": 300000,
+            "bpsMultiplier": 0.5,
+            "clickMultiplier": 0.5
+        },
+        {
+            "id": "item_gambs_arschkratzer",
+            "name": "Gambs Arschkratzer",
+            "description": "Klickt automatisch zufällig alle 1-12 Sekunden für 90 Sekunden.",
+            "cost": 10000000000,
+            "duration": 90000,
+            "bpsMultiplier": 0,
+            "clickMultiplier": 0,
+            "autoClickRange": [
+                1000,
+                12000
+            ],
+            "icon": "👆"
+        }
+    ],
+    "activeItems": [],
+    "startTime": 1766758749534,
+    "lastSaveTime": 1766758771014,
+    "settings": {
+        "snowfall": true,
+        "autosave": true
+    },
+    "history": [
+        {
+            "time": 1766758751577,
+            "benis": 0
+        },
+        {
+            "time": 1766758753582,
+            "benis": 0
+        },
+        {
+            "time": 1766758755582,
+            "benis": 0
+        },
+        {
+            "time": 1766758757581,
+            "benis": 0
+        },
+        {
+            "time": 1766758759592,
+            "benis": 0
+        },
+        {
+            "time": 1766758761593,
+            "benis": 0
+        },
+        {
+            "time": 1766758763601,
+            "benis": 0
+        },
+        {
+            "time": 1766758765604,
+            "benis": 0
+        },
+        {
+            "time": 1766758767615,
+            "benis": 0
+        },
+        {
+            "time": 1766758769629,
+            "benis": 1
+        }
+    ],
+    "hash": "-5aa51b54"
+}
+
+        </textarea>
+        <div class="bottom">
+            <button id="mainButton">Click me</button>
+        </div>
+    </div>
+
+    <script src="decryptor.js"></script>
+    <script>
+        function prepare_download() {
+            const ta = document.getElementById('mainText');
+            download_file(ta.value)
+        }
+
+        // Attach onclick handler to the button
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mainButton');
+            if (btn) btn.addEventListener('click', prepare_download);
+        });
+    </script>
+</body>
+</html>
