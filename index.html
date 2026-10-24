@@ -5,36 +5,143 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Benis Manipulator</title>
     <style>
-        html, body { height: 100%; margin: 0; }
-        .wrap { display: flex; flex-direction: column; height: 100vh; }
-        textarea {
-            flex: 0 0 80%;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 1rem;
-            font-size: 1rem;
-            resize: none;
-            border: 1px solid #ccc;
-            outline: none;
+        :root {
+            --bg: #0f1115;
+            --panel: #181b22;
+            --panel-2: #1f232c;
+            --border: #2d333f;
+            --text: #e6e8ee;
+            --muted: #8b93a5;
+            --accent: #ff8a1f;
+            --accent-2: #ffb347;
+            --ok: #3ddc84;
+            --err: #ff5d5d;
         }
-        .bottom {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem;
-            background: #f8f8f8;
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f3f4f7;
+                --panel: #ffffff;
+                --panel-2: #f7f8fb;
+                --border: #d9dde6;
+                --text: #1c2030;
+                --muted: #6a7184;
+                --ok: #1a9e55;
+                --err: #d63b3b;
+            }
         }
-        button {
-            padding: 0.6rem 1.2rem;
-            font-size: 1rem;
+        * { box-sizing: border-box; }
+        html, body { margin: 0; min-height: 100%; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+        header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+        h1 { margin: 0; font-size: 1.7rem; letter-spacing: -0.02em; }
+        h1 span { color: var(--accent); }
+        header p { margin: 0; color: var(--muted); }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+        .card h2 { margin: 0 0 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+        #dropzone {
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 26px 16px;
+            text-align: center;
+            color: var(--muted);
             cursor: pointer;
+            transition: border-color .15s, background .15s;
         }
+        #dropzone:hover, #dropzone.drag { border-color: var(--accent); background: var(--panel-2); }
+        #dropzone strong { color: var(--text); }
+        #dropzone small { display: block; margin-top: 4px; }
+        #fileInput { display: none; }
+
+        #status { margin-top: 10px; min-height: 1.4em; font-size: 0.9rem; color: var(--muted); }
+        #status.ok { color: var(--ok); }
+        #status.err { color: var(--err); }
+
+        .fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+        label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; }
+        input[type=number] {
+            width: 100%;
+            padding: 8px 10px;
+            background: var(--panel-2);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font: inherit;
+        }
+        input[type=number]:focus, textarea:focus { outline: none; border-color: var(--accent); }
+
+        textarea {
+            width: 100%;
+            height: 420px;
+            padding: 12px;
+            background: var(--panel-2);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            resize: vertical;
+            tab-size: 4;
+        }
+
+        .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        button {
+            padding: 10px 18px;
+            font: inherit;
+            font-weight: 600;
+            color: var(--text);
+            background: var(--panel-2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform .05s, border-color .15s;
+        }
+        button:hover { border-color: var(--accent); }
+        button:active { transform: translateY(1px); }
+        button.primary {
+            color: #1b1000;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-color: transparent;
+        }
+        button.primary:hover { filter: brightness(1.08); }
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <textarea id="mainText" placeholder="Type here...">
+    <div class="container">
+        <header>
+            <h1><span>Benis</span> Manipulator</h1>
+            <p>Edit your save from <a href="https://benisclicker.de/" style="color:var(--accent)">benisclicker.de</a></p>
+        </header>
+
+        <section class="card">
+            <h2>1 · Load savefile</h2>
+            <div id="dropzone" tabindex="0">
+                <strong>Click to choose a savefile</strong> or drop it here
+                <small>Encrypted <code>.benis</code> files and plain JSON are both accepted</small>
+            </div>
+            <input type="file" id="fileInput" />
+            <div id="status"></div>
+        </section>
+
+        <section class="card">
+            <h2>2 · Quick edit</h2>
+            <div class="fields" id="fields"></div>
+        </section>
+
+        <section class="card">
+            <h2>3 · Full save (JSON)</h2>
+            <textarea id="mainText" spellcheck="false">
 {
     "benis": 350,
     "totalBenis": 1011,
@@ -92,23 +199,141 @@
         "seizureWarningShown": true
     }
 }
-        </textarea>
-        <div class="bottom">
-            <button id="mainButton">Download Savefile</button>
+            </textarea>
+        </section>
+
+        <div class="actions">
+            <button class="primary" id="mainButton">Download Savefile</button>
+            <button id="formatButton">Format JSON</button>
         </div>
     </div>
 
     <script src="decryptor.js"></script>
     <script>
-        function prepare_download() {
-            const ta = document.getElementById('mainText');
-            download_file(ta.value)
+        const QUICK_FIELDS = [
+            ['benis', 'Benis'],
+            ['totalBenis', 'Total Benis'],
+            ['recordBenis', 'Record Benis'],
+            ['totalClicks', 'Total clicks'],
+            ['recordBenisPerClick', 'Record benis / click'],
+            ['recordBenisPerSecond', 'Record benis / second'],
+            ['prestigeLevel', 'Prestige level'],
+            ['upgradePoints', 'Upgrade points'],
+            ['schweissperlen', 'Schweissperlen'],
+            ['dieselGenerators', 'Diesel generators'],
+            ['pr0miumMs', 'pr0mium (ms)'],
+        ];
+
+        const $ = (id) => document.getElementById(id);
+        const ta = $('mainText');
+        const statusEl = $('status');
+
+        function setStatus(msg, kind) {
+            statusEl.textContent = msg;
+            statusEl.className = kind || '';
         }
 
-        // Attach onclick handler to the button
+        function parseEditor() {
+            try {
+                return JSON.parse(ta.value);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function buildFields() {
+            const box = $('fields');
+            box.innerHTML = '';
+            for (const [key, label] of QUICK_FIELDS) {
+                const wrap = document.createElement('div');
+                const l = document.createElement('label');
+                l.htmlFor = 'f_' + key;
+                l.textContent = label;
+                const input = document.createElement('input');
+                input.type = 'number';
+                input.step = 'any';
+                input.id = 'f_' + key;
+                input.dataset.key = key;
+                input.addEventListener('input', () => {
+                    const data = parseEditor();
+                    if (!data) return setStatus('Fix the JSON before using quick edit.', 'err');
+                    if (input.value === '') return;
+                    data[key] = Number(input.value);
+                    ta.value = JSON.stringify(data, null, 4);
+                });
+                wrap.append(l, input);
+                box.appendChild(wrap);
+            }
+        }
+
+        function syncFields() {
+            const data = parseEditor();
+            for (const input of $('fields').querySelectorAll('input')) {
+                const v = data ? data[input.dataset.key] : undefined;
+                input.disabled = !data;
+                input.value = typeof v === 'number' ? v : '';
+            }
+        }
+
+        function loadText(text, name) {
+            text = text.trim();
+            let data = null;
+            if (text.startsWith('{')) {
+                try { data = JSON.parse(text); } catch (e) { /* fall through */ }
+            }
+            if (!data) data = decrypt(text);
+            if (!data || typeof data !== 'object') {
+                return setStatus(`Could not read "${name}": not a valid savefile.`, 'err');
+            }
+            ta.value = JSON.stringify(data, null, 4);
+            syncFields();
+            setStatus(`Loaded "${name}". Edit it below, then download.`, 'ok');
+        }
+
+        function handleFile(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => loadText(String(reader.result), file.name);
+            reader.onerror = () => setStatus('Failed to read file.', 'err');
+            reader.readAsText(file);
+        }
+
+        function prepare_download() {
+            try {
+                const { filename } = download_file(ta.value);
+                setStatus(`Downloaded ${filename}`, 'ok');
+            } catch (e) {
+                setStatus('Invalid JSON: ' + e.message, 'err');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('mainButton');
-            if (btn) btn.addEventListener('click', prepare_download);
+            buildFields();
+            syncFields();
+
+            const dz = $('dropzone');
+            const fi = $('fileInput');
+            dz.addEventListener('click', () => fi.click());
+            dz.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fi.click(); }
+            });
+            fi.addEventListener('change', () => { handleFile(fi.files[0]); fi.value = ''; });
+            ['dragenter', 'dragover'].forEach((ev) =>
+                dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.add('drag'); }));
+            ['dragleave', 'drop'].forEach((ev) =>
+                dz.addEventListener(ev, (e) => { e.preventDefault(); dz.classList.remove('drag'); }));
+            dz.addEventListener('drop', (e) => handleFile(e.dataTransfer.files[0]));
+
+            ta.addEventListener('input', () => {
+                syncFields();
+                setStatus(parseEditor() ? '' : 'JSON is currently invalid.', parseEditor() ? '' : 'err');
+            });
+            $('formatButton').addEventListener('click', () => {
+                const data = parseEditor();
+                if (!data) return setStatus('JSON is invalid.', 'err');
+                ta.value = JSON.stringify(data, null, 4);
+            });
+            $('mainButton').addEventListener('click', prepare_download);
         });
     </script>
 </body>
