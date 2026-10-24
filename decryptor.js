@@ -8,6 +8,10 @@ Gd = "FALLBACK_SALT_PLEASE_CHANGE_ME_IN_ENV",
     ]
 
 
+// Legacy saves (upgrades as array of objects) carry an integrity hash;
+// current saves (upgrades as id -> count map) have none.
+is_legacy = (input) => Array.isArray(input.upgrades)
+
 hash = (input) => {
     var r, o;
     const t = JSON.stringify({
@@ -72,14 +76,14 @@ decrypt = (raw_input) => {
 
 function download_file(content) {
     input = JSON.parse(content)
-    input.hash = hash(input)
+    if (is_legacy(input)) input.hash = hash(input)
     encrypted = encrypt(input)
     
     const blob = new Blob([encrypted], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(blob);
     const now = new Date();
     const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-    const filename = `savefile_${date}.benis`;
+    const filename = `benis-clicker-save-${date}.benis`;
     const a = document.createElement('a');
     a.href = url;
     a.download = filename;
